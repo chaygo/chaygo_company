@@ -7,16 +7,16 @@ import Detail from './components/Detail'
 import {Route, BrowserRouter as Router,Switch} from 'react-router-dom';
 import Works from './components/Works'
 import Aboutus from './components/Aboutus'
-
+import ServiceProvider from './contexts/ServiceContext'
 
 
 function App() {
   return (
   
-   
+    
       
       <Router>
-       
+       <ServiceProvider>
         <Header/>
         <Switch>
           <Route exact path="/">
@@ -36,7 +36,7 @@ function App() {
             <Error/>
           </Route>
         </Switch>
-      
+        </ServiceProvider>
       </Router>
       
       

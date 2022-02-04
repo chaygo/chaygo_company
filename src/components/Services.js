@@ -1,20 +1,10 @@
-import React , {useState, useEffect}from 'react';
+import React , {useState, useEffect,useContext}from 'react';
 import {GrPersonalComputer} from 'react-icons/gr';
-
+import {ServiceContext} from '../contexts/ServiceContext'
 import { api_sections } from './api_sections';
 const Services = ()=>{
-
-    const [data,setData] = useState(null);
-    useEffect(()=>{
-        api_sections.get('sections')
-        .then(res=>{
-            console.log(res);
-            setData(res.data);
-        })
-        .catch(error=>{
-            console.log(error.message);
-        })
-    },[])
+    const {data} = useContext(ServiceContext)
+   
 
     return (
         <section id="services">

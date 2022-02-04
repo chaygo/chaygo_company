@@ -1,21 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link , useLocation } from 'react-router-dom'
-import {Container, Navbar , Nav , NavDropdown} from 'react-bootstrap'
-import {api_sections} from './api_sections'
 import { useEffect , useState } from 'react'
 import {FaAngleDown,FaBars,FaTimes,FaChevronDown,FaChevronUp} from 'react-icons/fa';
 import SectionList from './SectionList'
-
+import { ServiceContext } from '../contexts/ServiceContext';
 
 const Header = () => {
-    const [sections,setSections]=useState(null);
+    const {data:sections} = useContext(ServiceContext)
     const location=useLocation();
     const [sectionactive,setSectionActive]=useState(false);
     const [headerbutton,setheaderbutton]=useState(true);
     const [dropbtn,setDropBtn]=useState(false);
+
         useEffect(() => {
-            api_sections.get('sections')
-            .then(res => {setSections(res.data);})
+           
             if (location.pathname.indexOf('/sections/') !== -1)
             {
               setSectionActive(true);
