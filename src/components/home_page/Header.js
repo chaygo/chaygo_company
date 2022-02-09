@@ -3,7 +3,7 @@ import { Link , useLocation } from 'react-router-dom'
 import { useEffect , useState } from 'react'
 import {FaAngleDown,FaBars,FaTimes,FaChevronDown,FaChevronUp} from 'react-icons/fa';
 import SectionList from './SectionList'
-import { ServiceContext } from '../contexts/ServiceContext';
+import { ServiceContext } from '../../contexts/ServiceContext';
 
 const Header = () => {
     const {data:sections} = useContext(ServiceContext)

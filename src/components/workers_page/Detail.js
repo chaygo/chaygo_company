@@ -1,7 +1,7 @@
 import React , {useEffect,useState} from 'react'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import {Container} from 'react-bootstrap'
-import { api_sections } from './api_sections';
+
+import { api_sections } from '../api_sections';
 
 const Detail = () => {
     const [data,setData] = useState(null);
@@ -30,7 +30,7 @@ const Detail = () => {
            
                <div className="col-md-6 col-lg-4 col-sm-12" key={`team-${d.id}`}>
                    <div className="card ">
-                       <div className="text-center"> <img src={d.image_url} height="100" className="rounded-circle"/> </div>
+                       <div className="text-center"> <img src={d.image_url} height="100" className="rounded-circle" alt="worker-detail"/> </div>
                        <div className="text-center mt-3"> 
                            <h5 className="mt-2 mb-0">{d.name}</h5> <span>{d.section}</span>
                            <div className="px-4 mt-1">

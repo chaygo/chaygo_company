@@ -1,14 +1,16 @@
-import React , {useState, useEffect,useContext}from 'react';
+import React , {useContext}from 'react';
 import {GrPersonalComputer} from 'react-icons/gr';
-import {ServiceContext} from '../contexts/ServiceContext'
-import { api_sections } from './api_sections';
-const Services = ()=>{
+import {ServiceContext} from '../../contexts/ServiceContext'
+
+import { api_sections } from '../api_sections';
+const Services = (props)=>{
+  
     const {data} = useContext(ServiceContext)
    
 
     return (
         <section id="services">
-      <div className="container">
+      <div className="container" >
         <div className="section-header">
           <h3 className="section-title">Services</h3>
           <p className="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>

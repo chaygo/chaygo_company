@@ -1,5 +1,5 @@
 import React from 'react'
-import image1 from '../images/image1.jpg'
+import image1 from '../../images/image1.jpg'
 import {RiCheckDoubleLine} from 'react-icons/ri'
 const Aboutus = () => {
     return (
@@ -7,7 +7,7 @@ const Aboutus = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6 col-md-12 col-sm-12">
-                        <img src={image1} style={{height:"auto",width:"100%"}}/>
+                        <img src={image1} style={{height:"auto",width:"100%"}} alt="about-us"/>
                     </div>
                     <div className="col-lg-6 col-md-12 col-sm-12">
                         <h1> Chaygo's company - one of the best companies in th world</h1>

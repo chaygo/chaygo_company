@@ -4,6 +4,7 @@ export const ServiceContext = createContext();
 
 const ServiceProvider = ({ children }) => {
   const [data,setData] = useState(null);
+  const [works,setWorks] = useState(null);
   useEffect(() => {
     api_sections.get('sections')
     .then(res=>{
@@ -13,12 +14,23 @@ const ServiceProvider = ({ children }) => {
     .catch(error=>{
         console.log(error.message);
     })
+    api_sections.get('works')
+    .then(res=>{
+        console.log(res);
+        setWorks(res.data);
+    })
+    .catch(error=>{
+        console.log(error.message);
+    })
   }, []);
 
   return (
     <ServiceContext.Provider
       value={{
-        data
+        data,
+        works,
+        setData,
+        setWorks,
       }}
     >
       {children}

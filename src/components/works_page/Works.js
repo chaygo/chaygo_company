@@ -1,9 +1,9 @@
 import React , {useEffect, useState} from 'react'
-import {Container, Card } from 'react-bootstrap'
-import Header from './Header'
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
+import {Card } from 'react-bootstrap'
+
+import { useParams,Link } from 'react-router-dom/cjs/react-router-dom.min'
 import {AiFillHeart,AiFillEye,AiOutlineHeart} from 'react-icons/ai'
-import {api_sections} from './api_sections'
+import {api_sections} from '../api_sections'
 
 const Works = () => {
   const [data,setData] = useState(null);
@@ -29,21 +29,24 @@ const Works = () => {
          {section && <p className="section-description">{section.short_description}</p>}
         </div>
         <div className="row">
+        
          {data && data.map((d)=>(
-            <Card key={`works-${d.id}`} className="col-md-4 col-sm-6 col-lg-3">
-            <Card.Img variant="top" src={d.image_url} />
-            <Card.Body>
-              <Card.Title>{d.name}</Card.Title>
-              <Card.Text>
-                {d.description}
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-            <AiFillHeart className="float-left"/>
-            <AiOutlineHeart/>
-            <AiFillEye className="float-right"/>
-            </Card.Footer>
-          </Card>
+           <Link to={`/works/${d.id}`}>
+              <Card key={`works-${d.id}`} className="col-md-4 col-sm-6 col-lg-3">
+              <Card.Img variant="top" src={d.image_url} />
+              <Card.Body>
+                <Card.Title>{d.name}</Card.Title>
+                <Card.Text>
+                  {d.description}
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer>
+              <AiFillHeart className="float-left"/>
+              <AiOutlineHeart/>
+              <AiFillEye className="float-right"/>
+              </Card.Footer>
+            </Card>
+          </Link>
          ))}
           
 
